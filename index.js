@@ -1,12 +1,13 @@
-const obj = {
-    products: [
-        { title: "bottle of wine", price: 35, category: "wines" },
-        { title: "1984", price: 15, category: "books", author: "George Orwell" },
-        { title: "Iphone XR", price: 400, category: "phones", campera: "12MP" }
-    ]
-};
-const { products } = obj;
-const [, search] = products;
-const { authors } = search;
-const { author } = search;
-console.log(author);
+const jokeElement = document.getElementById("newJoke");
+
+async function getJoke() {
+    const item = await fetch("https://official-joke-api.appspot.com/random_joke");
+    const obj = await item.json();
+
+    // console.log("A: " + obj.setup);
+    // console.log("B: " + obj.punchline);
+    const fact = "- " + obj.setup +" - " + obj.punchline;
+
+    jokeElement.textContent = fact;
+}
+getJoke();
