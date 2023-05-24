@@ -5,3 +5,4 @@ const obj = {
         {title: "Iphone XR", price: 400, category: "phones", campera: "12MP"}
         ]
     };
+    const author = 
